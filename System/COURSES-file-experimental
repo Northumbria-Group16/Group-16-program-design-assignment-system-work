@@ -1,0 +1,78 @@
+import java.util.*;
+
+public class Courses<Consultant,Clients> {
+    private TreeMap<String, Consultant> consultants = new TreeMap<String, Consultant>();//Consultant datatype is not defined yet.
+    String CourseName;
+    Integer CourseLength;
+    Float CoursePrice;// change course price to eb subclass of courses.
+    int Price[] = {1,2,3,4,5,6,7,8,9,10};
+    //get symbols for currency added via some inbuilt method for it cant remember how tho.
+    String courses[] = {"Course1","Course2","Course3"};//could change these to be objects instead of arrays.
+
+    List Prices = new ArrayList(Collections.singleton(Price));//Price is constant. //change
+
+    //make the initial course list
+    public ArrayList MakeCourses() {
+        //make courses
+          List Courses = new ArrayList(Collections.singleton(courses)); //as objects
+
+        return (ArrayList) Courses;
+    }
+    public Courses(String CourseName, Integer CourseLength, Float CoursePrice) {
+
+        this.CourseName = CourseName;
+        this.CourseLength = CourseLength;
+        this.CoursePrice = CoursePrice;
+
+       CourseName = MakeCourses().get(0).toString(); //make this non-static for allocation of courses.
+
+        Price = new int[CoursePath.size()];
+        for (int i = 0; i < courses.length; i++) {
+            Price[i] = i; //I don't know do something with i value of each index?
+        }
+        List CoursesNPrice = (List) new HashMap<Courses,price>((Map<? extends Courses, ? extends price>) Prices); //casting... not sure if this is correct when developed apon.
+         CoursesNPrice.add(CourseName);
+    }
+
+    TreeMap<String, String> CoursePath = new TreeMap<String, String>();
+
+    List<Clients> ClientsList; //still need to define Client generic..
+
+
+    public void addConsultant(String name, Consultant consultant) {
+        consultants.put(name, consultant);
+    }//getters and setters for dynamic adding of data to the class.
+
+    String CoursePath(String CourseName) {
+        return CoursePath.get(CourseName);
+    }
+
+
+    //method for adding courses
+    String AddCourses() {
+        CoursePath.put("CourseName:", CourseName);
+        CoursePath.put("CourseLength:", CourseLength.toString());
+        CoursePath.put("CoursePrice:", CoursePrice.toString());
+        return CoursePath.toString();
+    }
+}//session extends courses as a subclass
+class Sessions extends Courses {
+    Integer SessionIndex;
+    String SessionName;
+    String SessionInfo;
+    String SessionInfo(String SessionInfo) {
+        return SessionInfo;
+    }
+    public Sessions(String CourseName, Integer CourseLength, Float CoursePrice) {
+        super(CourseName, CourseLength, CoursePrice);//superclass constructor
+    }
+}
+class Price extends Courses {
+    Float price;//now stated to be param value price in Price method.
+    public Price(Float price) {//make courseNames and course length and course price as subclasses of courses.
+        super(null, null, price);//dont know
+        this.price = price;//now param is equal to subclass variable can do something with each individual price.
+    }//can use price in other methods or whatever now.
+} //change to individual price of each course = price then transfer data to courses class or something.
+//THIS IS MORE OF A TEST File for experimenting for now.
+//LOGIC MAY BE BROKEN FOR NOW.
