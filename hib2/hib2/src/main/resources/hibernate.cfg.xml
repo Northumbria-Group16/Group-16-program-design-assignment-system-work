@@ -1,0 +1,16 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hbm2ddl.auto">update</property>    
+        <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+        <property name="hibernate.connection.url">jdbc:derby://localhost:1527/MyDB</property>
+        <property name="hibernate.connection.username">app</property>
+        <property name="hibernate.connection.password">app</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!--mapping class=""/-->
+        <mapping class="com.k5008.hib2.Module"/>  
+        <mapping class="com.k5008.hib2.Student"/>
+    </session-factory>
+</hibernate-configuration>
